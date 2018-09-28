@@ -73,12 +73,12 @@ namespace SR.SDK.Common.Extensions
 
         public static byte ToByte(this string source)
         {
-            throw new NotImplementedException();
+            return Convert.ToByte(source);
         }
 
         public static char ToChar(this string source)
         {
-            throw new NotImplementedException();
+            return Convert.ToChar(source);
         }
 
         public static DateTime ToDateTime(this string source)
