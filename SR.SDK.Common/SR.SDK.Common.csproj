@@ -1,7 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>SR.SDK.Common</PackageId>
+    <Title>Segundo Raio Common</Title>
+    <Version>1.0.0</Version>
+    <Authors>SegundoRaio Team and Contributors</Authors>
+    <Company>SegundoRaio</Company>
+    <Description>
+      Software development kit for .NET platform that unifies and streamlines processes to facilitate and streamline development by simplifying the amount of code needed for common activities. 
+      How to convert from types, enumerators and other activities related to software development. 
+      Fully compatible with .Net Framework, .Net Core and Xamarin.
+    </Description>
+    <Copyright>SegundoRaio Team</Copyright>
+    <PackageProjectUrl>https://github.com/SegundoRaio</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SegundoRaio/sdk-common</RepositoryUrl>
+    <PackageIconUrl>https://avatars2.githubusercontent.com/u/43619793</PackageIconUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
 </Project>
