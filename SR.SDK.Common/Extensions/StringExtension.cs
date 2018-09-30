@@ -22,6 +22,16 @@ namespace SR.SDK.Common.Extensions
             return source.Split(new char[] { ' ', '.', '?' }, StringSplitOptions.RemoveEmptyEntries).Length;
         }
 
+        public static string ToReticence(this string content, int maxLength)
+        {
+            if (content == null || content.Length <= maxLength)
+                return content;
+
+            content = content.Substring(0, content.Length >= (maxLength - 3) ? (maxLength - 3) : content.Length) + "...";
+
+            return content;
+        }
+
         public static string ToBase64(this string source)
         {
             throw new NotImplementedException();
