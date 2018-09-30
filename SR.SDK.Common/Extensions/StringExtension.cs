@@ -46,6 +46,7 @@ namespace SR.SDK.Common.Extensions
         public static string ToMD5Hash(this string source)
         {
             //System.Security.Cryptography.MD5
+            
             throw new NotImplementedException();
         }
 
@@ -226,6 +227,8 @@ namespace SR.SDK.Common.Extensions
             long.TryParse(value, out longout);
             return longout;
         }
+
+        
 
     }
 }
