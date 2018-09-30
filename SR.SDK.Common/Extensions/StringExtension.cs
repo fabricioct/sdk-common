@@ -28,22 +28,24 @@ namespace SR.SDK.Common.Extensions
                 return content;
 
             content = content.Substring(0, content.Length >= (maxLength - 3) ? (maxLength - 3) : content.Length) + "...";
-
             return content;
         }
 
         public static string ToBase64(this string source)
         {
-            throw new NotImplementedException();
+            var bytes = Encoding.UTF8.GetBytes(source);
+            return Convert.ToBase64String(bytes);
         }
 
-        public static string FromBase64()
+        public static string FromBase64(this string source)
         {
-            throw new NotImplementedException();
+            var bytes = Convert.FromBase64String(source);
+            return Encoding.UTF8.GetString(bytes);
         }
 
         public static string ToMD5Hash(this string source)
         {
+            //System.Security.Cryptography.MD5
             throw new NotImplementedException();
         }
 
@@ -71,7 +73,7 @@ namespace SR.SDK.Common.Extensions
 
         public static bool ToBoolean(this string source)
         {
-            return Convert.ToBoolean(source);
+            return bool.Parse(source);
         }
 
         public static bool ToBooleanTryParse(this string source)
@@ -83,7 +85,14 @@ namespace SR.SDK.Common.Extensions
 
         public static byte ToByte(this string source)
         {
-            return Convert.ToByte(source);
+            return byte.Parse(source);
+        }
+
+        public static byte ToByteTryParse(this string source)
+        {
+            byte byt = byte.MinValue;
+            byte.TryParse(source, out byt);
+            return byt;
         }
 
         public static char ToChar(this string source)
@@ -128,17 +137,95 @@ namespace SR.SDK.Common.Extensions
 
         public static ushort ToUInt16(this string source)
         {
-            throw new NotImplementedException();
+            return ushort.Parse(source);
+        }
+
+        public static ushort ToUInt16TryParse(this string source)
+        {
+            ushort value;
+            ushort.TryParse(source, out value);
+            return value;
         }
 
         public static uint ToUInt32(this string source)
         {
-            throw new NotImplementedException();
+            return uint.Parse(source);
+        }
+
+        public static uint ToUInt32TryParse(this string source)
+        {
+            uint value;
+            uint.TryParse(source, out value);
+            return value;
         }
 
         public static ulong ToUInt64(this string source)
         {
-            throw new NotImplementedException();
+            return ulong.Parse(source);
         }
+
+        public static ulong ToUInt64TryParse(this string source)
+        {
+            ulong value;
+            ulong.TryParse(source, out value);
+            return value;
+        }
+
+        public static bool IsNumeric(this string value)
+        {
+            double d;
+            return double.TryParse(value, out d);
+        }
+
+        public static bool IsDateTime(this string value)
+        {
+            DateTime d;
+            return DateTime.TryParse(value, out d);
+        }
+
+        public static bool IsInt32(this string source)
+        {
+            Int32 value;
+            return Int32.TryParse(source, out value);
+        }
+
+        public static bool IsInt64(this string source)
+        {
+            Int64 value;
+            return Int64.TryParse(source, out value);
+        }
+
+        public static bool IsShort(this string source)
+        {
+            short value;
+            return short.TryParse(source, out value);
+        }
+
+        public static bool IsDecimal(this string source)
+        {
+            decimal value;
+            return decimal.TryParse(source, out value);
+        }
+
+        public static bool IsBoolean(this string source)
+        {
+            bool value;
+            return bool.TryParse(source, out value);
+        }
+
+        public static short ToShort(this string value)
+        {
+            short shortout;
+            short.TryParse(value, out shortout);
+            return shortout;
+        }
+
+        public static long ToLong(this string value)
+        {
+            long longout;
+            long.TryParse(value, out longout);
+            return longout;
+        }
+
     }
 }
